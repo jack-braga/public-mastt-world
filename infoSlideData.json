@@ -1,0 +1,29 @@
+{
+    "warehouse": {
+      "img": "assets/canvas/previews/preview-warehouse.png",
+      "role": "Asset Owner",
+      "icon": "payments",
+      "description": {
+        "challenges": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at sollicitudin ipsum, nec cursus velit. Donec vitae varius mi. Duis volutpat odio ut lacus ultricies interdum. Mauris lacinia malesuada libero id efficitur. Phasellus porta tellus leo, in aliquam metus semper a. Integer eleifend commodo magna, non sollicitudin nulla. Praesent id sollicitudin justo. Etiam molestie est pulvinar metus maximus, at porttitor metus gravida. Proin in mollis erat, ac tempus diam. Curabitur consectetur tortor nec magna convallis lobortis. Etiam malesuada ex orci, ut ornare nunc vestibulum sit amet. Nulla eget imperdiet metus, non cursus neque. In interdum ex ut augue fermentum ultrices. Proin at ipsum efficitur orci porttitor aliquet sed sed diam. Vestibulum egestas sapien in sapien viverra, quis vestibulum neque finibus. In tellus sem, pulvinar ac tellus tempor, feugiat congue sapien.",
+        "solutions": "Donec at ex lobortis, porttitor purus tristique, egestas nisl. Nunc ut dignissim neque, et pretium neque. Duis convallis nunc a consequat blandit. Nam dictum posuere cursus. Suspendisse sit amet elementum ex. Vivamus pellentesque sed augue sed dictum. Nullam eu eleifend velit. Etiam vehicula mi eu erat fermentum aliquet. Maecenas volutpat velit at metus laoreet, et convallis dui gravida. Pellentesque aliquet vulputate lorem, ut faucibus elit iaculis eget."
+      }
+    },
+    "constructionSite": {
+        "img": "assets/canvas/previews/preview-constructionSite.png",
+        "role": "Site Builder",
+        "icon": "handyman",
+        "description": {
+          "challenges": "Common challenges we see for project managers\n❌ Documentation Management\nCommuniocation Management\nDrawing Control\netc",
+          "solutions": "Suspendisse et rutrum ipsum. Ut lacus purus, vestibulum vel orci in, venenatis condimentum neque. Nunc sagittis sollicitudin nisi ut aliquam. Nam dapibus interdum diam ut porta. In eu scelerisque nulla. Ut libero neque, pulvinar sit amet convallis vel, dapibus vel est. Nunc blandit tempus urna sed porttitor. Sed et orci a dui malesuada consectetur in sed magna. Fusce ornare tempus lacus sed efficitur. Praesent metus elit, aliquet sit amet sapien non, convallis commodo lorem."
+        }
+    },
+    "pmBuilding": {
+        "img": "assets/canvas/previews/preview-pmBuilding.png",
+        "role": "Project Manager",
+        "icon": "map",
+        "description": {
+        "challenges": "Aliquam a nibh posuere, laoreet orci eget, pretium nunc. Ut luctus nibh vel eros faucibus, eget rhoncus orci maximus. Praesent laoreet lectus a gravida eleifend. Integer auctor, urna eu viverra lobortis, massa odio bibendum nulla, quis pellentesque risus erat vel ante. Fusce mollis ante augue, at pellentesque purus iaculis non. Aliquam nec lobortis nunc. Praesent eu sem a arcu commodo interdum nec quis nisi. Etiam imperdiet pulvinar feugiat. Mauris congue eget est a iaculis. Praesent egestas gravida tempor. Sed eleifend dignissim nibh, nec rutrum enim auctor quis. Cras non eros non urna consequat vestibulum.",
+        "solutions": "Mastt"
+        }
+    }
+  }

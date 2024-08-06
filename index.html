@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastt World</title>
+    <link rel="icon" type="image/x-icon" href="/assets/generalPage/mastt-fav.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="preload">
+            <img src="assets/canvas/hit-box.png" alt="hit-box">
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.2.6/pixi.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@pixi/gif@3.0.1/dist/pixi-gif.min.js"></script>
+        <script type="module" src="js/blocks/app.js"></script>
+        <script type="module" src="js/blocks/infoSlide.js"></script>
+        <script type="module" src="js/blocks/spriteObj.js"></script>
+        <script type="module" src="js/blocks/spriteOptions.js"></script>
+        <script type="module" src="js/blocks/tag.js"></script>
+        <script type="module" src="js/blocks/turningSpriteObj.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <div class="logo">
+            <a href="https://www.mastt.com/">
+                <img src="assets/generalPage/logo.svg" alt="Mastt Logo">
+            </a>
+        </div>
+        <div class="blurr"></div>
+        <div class="infoSlide">
+            <div class="heading">
+                <span class="slide-material-icons material-icons icon"></span>
+                <h1></h1>
+                <button class="close">
+                    <span class="slide-material-icons material-icons cross">close</span>
+                </button>
+            </div>
+            <div class="tabs-menu full-section-tabs-menu-dark">
+                <a id="select-challenges" href="#" class="w-button full-section-tab-link-light">Challenges</a>
+                <a id="select-solutions" href="#" class="w-button full-section-tab-link-dark">Solutions</a>
+            </div>
+            <div class="slide-content">
+                <div class="building-preview">
+                    <img class="building-img" src="" alt="preview-img-of-building-selected">
+                </div>
+                <div class="description-box">
+                    <p class="description"></p>
+                </div>
+            </div>
+        </div>
+        <div class="offset-1"></div>
+        <div class="toggle">
+            <span class="material-icons toggle-material-icons" id="toggle-icon">light_mode</span>
+        </div>
+    </div>
+</body>
+</html>
