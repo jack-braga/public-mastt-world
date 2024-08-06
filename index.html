@@ -11,21 +11,6 @@
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.2.6/pixi.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@pixi/gif@3.0.1/dist/pixi-gif.min.js"></script>
-    <script>
-        async function preloadJSON() {
-            try {
-                const response = await fetch('infoSlideData.json');
-                if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
-                }
-                const data = await response.json();
-                console.log('JSON data loaded:', data);
-            } catch (error) {
-                console.error('There was a problem with the fetch operation:', error);
-            }
-        }
-        preloadJSON();
-    </script>
 </head>
 <body>
     <div id="wrapper">
