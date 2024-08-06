@@ -20,16 +20,16 @@ export class turningSpriteObj {
 
         // BELOW MUST BE SEQUENTIAL - DO NOT CHANGE ORDER
         this.setSpeedMultipliers(position.ur);
-        this.upRight = new spriteObj(`${path}1.png`, position.ur, this.opts);
+        this.upRight = new spriteObj(`${path}1.webp`, position.ur, this.opts);
         
         this.setSpeedMultipliers(position.ul);
-        this.upLeft = new spriteObj(`${path}1.png`, position.ul, this.opts);
+        this.upLeft = new spriteObj(`${path}1.webp`, position.ul, this.opts);
 
         this.setSpeedMultipliers(position.dl);
-        this.downLeft = new spriteObj(`${path}2.png`, position.dl, this.opts);
+        this.downLeft = new spriteObj(`${path}2.webp`, position.dl, this.opts);
 
         this.setSpeedMultipliers(position.dr);
-        this.downRight = new spriteObj(`${path}2.png`, position.dr, this.opts);
+        this.downRight = new spriteObj(`${path}2.webp`, position.dr, this.opts);
         
         this.end = movement.endCount;
         this.currentAngle = this.upRight;

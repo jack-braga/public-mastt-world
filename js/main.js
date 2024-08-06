@@ -39,14 +39,14 @@ const map = new spriteObj("assets/canvas/map-sharp-rebuilt.svg", mapPosition);
 await map.init();
 
 // Init Warehouse
-const warehouse = new spriteObj("assets/canvas/hit-box.png", warehousePosition, warehouseOpts);
+const warehouse = new spriteObj("assets/canvas/hit-box.webp", warehousePosition, warehouseOpts);
 await warehouse.init();
 warehouse.sprite.rotation = Math.PI / 7;
 warehouse.sprite.scale.x *= 1.3;
 warehouse.tag.spriteObj.yOffset -= 0.3;
 
 // Init PM Building
-const pmBuilding = new spriteObj("assets/canvas/hit-box.png", pmBuildingPosition, pmBuildingOpts);
+const pmBuilding = new spriteObj("assets/canvas/hit-box.webp", pmBuildingPosition, pmBuildingOpts);
 await pmBuilding.init();
 // pmBuilding.sprite.rotation = Math.PI - (Math.PI / 3);
 pmBuilding.sprite.rotation = Math.PI / 2;
@@ -54,14 +54,14 @@ pmBuilding.sprite.scale.x *= 1.5;
 pmBuilding.tag.spriteObj.xOffset -= 0.335;
 
 // Init Construction Site
-const constructionSite = new spriteObj("assets/canvas/hit-box.png", constructionSitePosition, constructionSiteOpts);
+const constructionSite = new spriteObj("assets/canvas/hit-box.webp", constructionSitePosition, constructionSiteOpts);
 await constructionSite.init();
 constructionSite.sprite.rotation = Math.PI / 7;
 constructionSite.sprite.scale.x *= 1.3;
 constructionSite.tag.spriteObj.yOffset += 0.3;
 
 // Init Motorbike
-const motorbike = new spriteObj("assets/canvas/vehicles/motorbike/motorbike.png", motorbikePosition, motorbikeOpts);
+const motorbike = new spriteObj("assets/canvas/vehicles/motorbike/motorbike.webp", motorbikePosition, motorbikeOpts);
 await motorbike.init();
 
 // Init Sports Car
@@ -70,7 +70,7 @@ await sportsCar.initBack();
 await sportsCar.initFront();
 
 // Init Police Car
-const policeCar = new spriteObj("assets/canvas/vehicles/policeCar/policeCar.png", policeCarPosition, policeCarOpts);
+const policeCar = new spriteObj("assets/canvas/vehicles/policeCar/policeCar.webp", policeCarPosition, policeCarOpts);
 await policeCar.init();
 
 // Init UTE
@@ -96,22 +96,22 @@ await fighter.initBack();
 await fighter.initFront();
 
 // Init Jumbo Shadow
-const jumboShadow = new spriteObj("assets/canvas/vehicles/jumbo/jumbo-shadow.png", jumboShadowPosition, jumboShadowOpts);
+const jumboShadow = new spriteObj("assets/canvas/vehicles/jumbo/jumbo-shadow.webp", jumboShadowPosition, jumboShadowOpts);
 await jumboShadow.init();
 jumboShadow.sprite.alpha = 0.3;
 
 // Init Jumbo
-const jumbo = new spriteObj("assets/canvas/vehicles/jumbo/jumbo.png", jumboPosition, jumboOpts);
+const jumbo = new spriteObj("assets/canvas/vehicles/jumbo/jumbo.webp", jumboPosition, jumboOpts);
 jumbo.shadow = jumboShadow;
 await jumbo.init();
 
 // Init Airplane Shadow
-const airplaneShadow = new spriteObj("assets/canvas/vehicles/airplane/airplane-shadow.png", airplaneShadowPosition, airplaneOpts);
+const airplaneShadow = new spriteObj("assets/canvas/vehicles/airplane/airplane-shadow.webp", airplaneShadowPosition, airplaneOpts);
 await airplaneShadow.init();
 airplaneShadow.sprite.alpha = 0.2;
 
 // Init Airplane
-const airplane = new spriteObj("assets/canvas/vehicles/airplane/airplane.png", airplanePosition, airplaneOpts);
+const airplane = new spriteObj("assets/canvas/vehicles/airplane/airplane.webp", airplanePosition, airplaneOpts);
 airplane.shadow = airplaneShadow;
 await airplane.init();
 

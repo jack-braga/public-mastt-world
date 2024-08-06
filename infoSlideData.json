@@ -1,6 +1,6 @@
 {
     "warehouse": {
-      "img": "assets/canvas/previews/preview-warehouse.png",
+      "img": "assets/canvas/previews/preview-warehouse.webp",
       "role": "Asset Owner",
       "icon": "payments",
       "description": {
@@ -9,7 +9,7 @@
       }
     },
     "constructionSite": {
-        "img": "assets/canvas/previews/preview-constructionSite.png",
+        "img": "assets/canvas/previews/preview-constructionSite.webp",
         "role": "Site Builder",
         "icon": "handyman",
         "description": {
@@ -18,7 +18,7 @@
         }
     },
     "pmBuilding": {
-        "img": "assets/canvas/previews/preview-pmBuilding.png",
+        "img": "assets/canvas/previews/preview-pmBuilding.webp",
         "role": "Project Manager",
         "icon": "map",
         "description": {

@@ -21,7 +21,7 @@ export class tag {
             movement: null,
             isTagBool: false
         };
-        this.spriteObj = new spriteObj(`assets/canvas/tags/tag-${tagSuffix}.png`, tagPosistion, tagOpts);
+        this.spriteObj = new spriteObj(`assets/canvas/tags/tag-${tagSuffix}.webp`, tagPosistion, tagOpts);
         this.makeVisible = false;
         this.rendered = false;
         this.delay = 0;
@@ -42,7 +42,7 @@ export class tag {
                 }
                 this.spriteObj.sprite.alpha += 0.08;
                 this.spriteObj.sprite.scale.y += 0.08 / 32;
-                if (this.spriteObj.path == `assets/canvas/tags/tag-constructionSite.png`) {
+                if (this.spriteObj.path == `assets/canvas/tags/tag-constructionSite.webp`) {
                     this.spriteObj.yOffset -= 0.08 / 5;
                 }
             }
@@ -51,7 +51,7 @@ export class tag {
             if (alpha >= MIN_ALPHA) {
                 this.spriteObj.sprite.alpha -= 0.1;
                 this.spriteObj.sprite.scale.y -= 0.1 / 32;
-                if (this.spriteObj.path == `assets/canvas/tags/tag-constructionSite.png`) {
+                if (this.spriteObj.path == `assets/canvas/tags/tag-constructionSite.webp`) {
                     this.spriteObj.yOffset += 0.1 / 5;
                 }
             } else {

@@ -71,21 +71,21 @@ export class spriteObj {
                 this.sprite.on("touchendoutside", endHoverFn);
             }
             if (this.interactive) {
-                if (this.path == "assets/canvas/vehicles/jumbo/jumbo.png" ||
-                    this.path == "assets/canvas/vehicles/airplane/airplane.png") {
+                if (this.path == "assets/canvas/vehicles/jumbo/jumbo.webp" ||
+                    this.path == "assets/canvas/vehicles/airplane/airplane.webp") {
                     // Jumbo & Airplane
-                    this.sprite.on("mouseover", () => document.body.style.cursor = `url('assets/canvas/cursors/wand.png') 16 16, auto`);
+                    this.sprite.on("mouseover", () => document.body.style.cursor = `url('assets/canvas/cursors/wand.webp') 16 16, auto`);
                     this.sprite.on("mouseout", () => document.body.style.cursor = defaultCursor);
                     
                     this.sprite.on(this.event, () => this.fn(this, this.shadow));
                     this.sprite.on("touchend", () => this.fn(this, this.shadow));
-                } else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.png" ||
-                    this.path == "assets/canvas/vehicles/policeCar/policeCar.png") {
+                } else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp" ||
+                    this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
                     // Motorcycle & Police Car else 
                     const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
                     doomOverlay.animationSpeed *= 1.1;
                     this.sprite.on("mouseover", () => {
-                        document.body.style.cursor = `url('assets/canvas/cursors/target.png') 16 16, auto`;
+                        document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
                         if (IS_SMALL_SCREEN) {
                             doomOverlay.alpha = 0;
                         } else {
@@ -153,9 +153,9 @@ export class spriteObj {
         this.sprite.height *= ratio;
         this.sprite.width *= ratio;
         if (this.interactive) {
-            if (this.path == "assets/canvas/vehicles/motorbike/motorbike.png") {
+            if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp") {
                 this.sprite.hitArea = new PIXI.Circle(this.sprite.width / 2, this.sprite.height / 2, app.screen.height / 1.7);
-            } else if (this.path == "assets/canvas/vehicles/policeCar/policeCar.png") {
+            } else if (this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
                 this.sprite.hitArea = new PIXI.Circle(this.sprite.width / 2, this.sprite.height / 2, app.screen.height / 3);
             }
         }
