@@ -6,7 +6,7 @@ import { app, defaultCursor, IS_SMALL_SCREEN } from "./app.js";
 let infoSlideData;
 export async function getJSON() {
     try {
-        const response = await fetch('../../infoSlideData.json');
+        const response = await fetch('infoSlideData.json');
         const data = await response.json();
         infoSlideData = data;
     } catch (error) {
