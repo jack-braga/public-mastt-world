@@ -35,7 +35,7 @@ await getJSON();
 initInfoSlide();
 
 // Init Map
-const map = new spriteObj("assets/canvas/map-sharp-rebuilt.svg", mapPosition);
+const map = new spriteObj("assets/canvas/map-compressed-1.svg", mapPosition);
 await map.init();
 
 // Init Warehouse
