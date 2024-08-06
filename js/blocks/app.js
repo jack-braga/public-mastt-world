@@ -65,7 +65,7 @@ setTimeout(() => {
     }
     document.body.style.filter = `none`;
     resizeSlideContentBackdrop();
-}, 1000);
+}, 0);
 
 // Adjust resizing of map based on media query (for small screens)
 export let IS_SMALL_SCREEN = false;
