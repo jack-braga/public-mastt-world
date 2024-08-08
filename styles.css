@@ -322,9 +322,9 @@ p {
         --close-logo-transition: right 1s;
         --open-logo-border-radius: 0px 0px 16px 16px;
         --close-logo-border-radius: 0px 0px 16px 16px;
-        --open-toggle-bottom: calc(108.5vh - 39vw);
+        --open-toggle-bottom: calc(110vh);
         --close-toggle-bottom: calc(87vh - 38vw);
-        --open-toggle-transition: 0.75s cubic-bezier(0.2, 1, 0.58, 1) !important;
+        --open-toggle-transition: 0.65s cubic-bezier(.9,-0.55,.23,.33) !important;
         --close-toggle-transition: 0.9s cubic-bezier(0.2, 1, 0.58, 1) 0.1s !important;
     }   
     #wrapper canvas {
