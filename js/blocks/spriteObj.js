@@ -13,6 +13,7 @@ export class spriteObj {
         // Interaction
         this.event = opts.interaction?.event;
         this.fn = opts.interaction?.fn;
+        this.hoverCursor = opts.interaction?.hoverCursor;
         this.interactive = opts.interaction;
 
         // Movement
@@ -74,8 +75,8 @@ export class spriteObj {
                 if (this.path == "assets/canvas/vehicles/jumbo/jumbo.webp" ||
                     this.path == "assets/canvas/vehicles/airplane/airplane.webp") {
                     // Jumbo & Airplane
-                    this.sprite.on("mouseover", () => document.body.style.cursor = `url('assets/canvas/cursors/wand.webp') 16 16, auto`);
-                    this.sprite.on("mouseout", () => document.body.style.cursor = defaultCursor);
+                    // this.sprite.on("mouseover", () => document.body.style.cursor = `url('assets/canvas/cursors/wand.webp') 16 16, auto`);
+                    // this.sprite.on("mouseout", () => document.body.style.cursor = defaultCursor);
                     
                     this.sprite.on(this.event, () => this.fn(this, this.shadow));
                     this.sprite.on("touchend", () => this.fn(this, this.shadow));
@@ -84,8 +85,8 @@ export class spriteObj {
                 //     // Motorcycle & Police Car else 
                 //     const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
                 //     doomOverlay.animationSpeed *= 1.1;
-                    this.sprite.on("mouseover", () => {
-                        document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
+                //    this.sprite.on("mouseover", () => {
+                //        document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
                 //         if (IS_SMALL_SCREEN) {
                 //             doomOverlay.alpha = 0;
                 //         } else {
@@ -117,15 +118,15 @@ export class spriteObj {
                 //         doomOverlay.currentFrame = 11;
                 //         doomOverlay.stop();
                 //         app.stage.addChild(doomOverlay);
-                    });
-                    this.sprite.on("mouseout", () => {
-                        clearTimeout(this.timeoutId);
-                        this.timeoutId = setTimeout(() => {
-                            document.body.style.cursor = defaultCursor;
-                            // doomOverlay.alpha = 0;
-                            // app.stage.removeChild(doomOverlay);
-                        }, 0);
-                    });
+                //    });
+                //    this.sprite.on("mouseout", () => {
+                //        clearTimeout(this.timeoutId);
+                //        this.timeoutId = setTimeout(() => {
+                //            document.body.style.cursor = defaultCursor;
+                //            // doomOverlay.alpha = 0;
+                //            // app.stage.removeChild(doomOverlay);
+                //        }, 0);
+                //    });
 
                     this.sprite.on(this.event, () => this.fn(this/*, doomOverlay*/));
                     this.sprite.on("touchend", () => this.fn(this/*, doomOverlay*/));
@@ -133,6 +134,10 @@ export class spriteObj {
                     this.sprite.on(this.event, () => this.fn(this));
                     this.sprite.on("touchend", () => this.fn(this));
                 }
+                this.sprite.on("mouseover", () => document.body.style.cursor = this.hoverCursor);
+                this.sprite.on("touchstart", () => document.body.style.cursor = this.hoverCursor);
+                this.sprite.on("mouseout", () => document.body.style.cursor = defaultCursor);
+                this.sprite.on("touchendoutside", () => document.body.style.cursor = defaultCursor);
             }
         } catch (err) {
             console.log(err);

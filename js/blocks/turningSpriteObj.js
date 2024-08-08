@@ -100,4 +100,9 @@ export class turningSpriteObj {
             this.currentAngle = departureAngel;
         }
     };
+    removeChildren() {
+        app.stage.removeChild(this.upRight.sprite);
+        app.stage.removeChild(this.upLeft.sprite);
+        app.stage.removeChild(this.downLeft.sprite);
+        app.stage.removeChild(this.downRight.sprite);    };
 };

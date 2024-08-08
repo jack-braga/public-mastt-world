@@ -20,6 +20,10 @@ export function initInfoSlide() {
     infoSlideInterface.selected = isSelected ? "challenges" : "solutions";
 }
 
+// Const/Glocal variables
+const targetCursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
+const wandCursor = `url('assets/canvas/cursors/wand.webp') 16 16, auto`;
+
 // ========== Map ===========
 export const mapPosition = {
     scaling: 1,
@@ -84,7 +88,8 @@ const motorbikeInteraction = {
         // }
         // // doomOverlay.alpha = 1;
         // doomOverlay.play();
-    }
+    },
+    hoverCursor: targetCursor,
 };
 const motorbikeMovement = {
     speed: 1/25,
@@ -171,7 +176,8 @@ const jumboInteraction = {
         magicPoof.currentFrame = 0;
         app.stage.addChild(magicPoof);
         magicPoof.play();
-    }
+    },
+    hoverCursor: wandCursor,
 };
 const jumboMovement = {
     speed: 1/100,
@@ -219,7 +225,8 @@ const airplaneInteraction = {
         magicPoof.currentFrame = 0;
         app.stage.addChild(magicPoof);
         magicPoof.play();
-    }
+    },
+    hoverCursor: wandCursor,
 };
 const airplaneMovement = {
     speed: 1/80,
@@ -432,7 +439,8 @@ const policeCarInteraction = {
         // }
         // // doomOverlay.alpha = 1;
         // doomOverlay.play();
-    }
+    },
+    hoverCursor: targetCursor,
 };
 const policeCarMovement = {
     speed: 2/35,
