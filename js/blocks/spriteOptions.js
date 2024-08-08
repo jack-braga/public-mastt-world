@@ -57,7 +57,7 @@ const explode = await PIXI.Assets.load('assets/gifs/explode.gif');
 // const boom = new Audio('assets/boom.mp3');
 const motorbikeInteraction = {
     event: "mousedown",
-    fn: (motorbike, doomOverlay) => {
+    fn: (motorbike/*, doomOverlay*/) => {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(motorbike.sprite);
         explode.alpha = 1;
@@ -75,14 +75,15 @@ const motorbikeInteraction = {
         // boom.play();
         // document.body.style.cursor = `auto`;
 
-        doomOverlay.currentFrame = 0;
-        if (IS_SMALL_SCREEN) {
-            doomOverlay.alpha = 0;
-        } else {
-            app.stage.addChild(doomOverlay);
-            doomOverlay.alpha = 1;
-        }
-        doomOverlay.play();
+        // doomOverlay.currentFrame = 0;
+        // if (IS_SMALL_SCREEN) {
+        //     doomOverlay.alpha = 0;
+        // } else {
+        //     app.stage.addChild(doomOverlay);
+        //     doomOverlay.alpha = 1;
+        // }
+        // // doomOverlay.alpha = 1;
+        // doomOverlay.play();
     }
 };
 const motorbikeMovement = {
@@ -390,7 +391,7 @@ export const policeCarPosition = {
 };
 const policeCarInteraction = {
     event: "mousedown",
-    fn: (policeCar, doomOverlay) => {
+    fn: (policeCar/*, doomOverlay*/) => {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(policeCar.sprite);
         explode.alpha = 1;
@@ -405,32 +406,32 @@ const policeCarInteraction = {
         app.stage.addChild(explode);
         explode.play();
 
-        if (IS_SMALL_SCREEN) {
-            doomOverlay.alpha = 0;
-        } else {
-            let height;
-            let ratio;
-            doomOverlay.anchor.set(0.5);
-            height = app.screen.height * 0.6;
-            ratio = height / doomOverlay.height;
-            doomOverlay.height = height;
-            doomOverlay.width *= ratio;
-            doomOverlay.x = app.screen.width * (1.5 / 3);
-            doomOverlay.y = app.screen.height - (height / 2);
-            doomOverlay.loop = false;
-            doomOverlay.onComplete = (() => {
-                setTimeout(() => {
-                    document.body.style.cursor = defaultCursor;
-                    doomOverlay.alpha = 0;
-                    app.stage.removeChild(doomOverlay);
-                }, 400);
-            });
-            doomOverlay.currentFrame = 0;
-            app.stage.addChild(doomOverlay);
-            doomOverlay.alpha = 1;
-        }
-        // doomOverlay.alpha = 1;
-        doomOverlay.play();
+        // if (IS_SMALL_SCREEN) {
+        //     doomOverlay.alpha = 0;
+        // } else {
+        //     let height;
+        //     let ratio;
+        //     doomOverlay.anchor.set(0.5);
+        //     height = app.screen.height * 0.6;
+        //     ratio = height / doomOverlay.height;
+        //     doomOverlay.height = height;
+        //     doomOverlay.width *= ratio;
+        //     doomOverlay.x = app.screen.width * (1.5 / 3);
+        //     doomOverlay.y = app.screen.height - (height / 2);
+        //     doomOverlay.loop = false;
+        //     doomOverlay.onComplete = (() => {
+        //         setTimeout(() => {
+        //             document.body.style.cursor = defaultCursor;
+        //             doomOverlay.alpha = 0;
+        //             app.stage.removeChild(doomOverlay);
+        //         }, 400);
+        //     });
+        //     doomOverlay.currentFrame = 0;
+        //     app.stage.addChild(doomOverlay);
+        //     doomOverlay.alpha = 1;
+        // }
+        // // doomOverlay.alpha = 1;
+        // doomOverlay.play();
     }
 };
 const policeCarMovement = {

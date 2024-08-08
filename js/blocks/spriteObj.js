@@ -79,59 +79,59 @@ export class spriteObj {
                     
                     this.sprite.on(this.event, () => this.fn(this, this.shadow));
                     this.sprite.on("touchend", () => this.fn(this, this.shadow));
-                } else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp" ||
-                    this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
-                    // Motorcycle & Police Car else 
-                    const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
-                    // removes doom overlay:
-                    app.stage.removeChild(doomOverlay);
-                    doomOverlay.animationSpeed *= 1.1;
-                    this.sprite.on("mouseover", () => {
-                        document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
-                        if (IS_SMALL_SCREEN) {
-                            doomOverlay.alpha = 0;
-                        } else {
-                            doomOverlay.alpha = 1;
-                        }
-                        doomOverlay.zIndex = 2;
-                        let height;
-                        let width;
-                        let ratio;
-                        if (IS_SMALL_SCREEN) {
-                            null;
-                        } else {
-                            doomOverlay.anchor.set(0.5);
-                            height = app.screen.height * 0.6;
-                            ratio = height / doomOverlay.height;
-                            doomOverlay.height = height;
-                            doomOverlay.width *= ratio;
-                            doomOverlay.x = app.screen.width * (1.5 / 3);
-                            doomOverlay.y = app.screen.height - (height / 2);
-                        }
-                        doomOverlay.loop = false;
-                        doomOverlay.onComplete = (() => {
-                            setTimeout(() => {
-                                document.body.style.cursor = defaultCursor;
-                                doomOverlay.alpha = 0;
-                                app.stage.removeChild(doomOverlay);
-                            }, 400);
-                        });
-                        doomOverlay.currentFrame = 11;
-                        doomOverlay.stop();
-                        app.stage.addChild(doomOverlay);
-                    });
-                    this.sprite.on("mouseout", () => {
-                        clearTimeout(this.timeoutId);
-                        this.timeoutId = setTimeout(() => {
-                            document.body.style.cursor = defaultCursor;
-                            doomOverlay.alpha = 0;
-                            app.stage.removeChild(doomOverlay);
-                        }, 0);
-                    });
+                }
+                // else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp" ||
+                //     this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
+                //     // Motorcycle & Police Car else 
+                //     const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
+                //     doomOverlay.animationSpeed *= 1.1;
+                //     this.sprite.on("mouseover", () => {
+                //         document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
+                //         if (IS_SMALL_SCREEN) {
+                //             doomOverlay.alpha = 0;
+                //         } else {
+                //             doomOverlay.alpha = 1;
+                //         }
+                //         doomOverlay.zIndex = 2;
+                //         let height;
+                //         let width;
+                //         let ratio;
+                //         if (IS_SMALL_SCREEN) {
+                //             null;
+                //         } else {
+                //             doomOverlay.anchor.set(0.5);
+                //             height = app.screen.height * 0.6;
+                //             ratio = height / doomOverlay.height;
+                //             doomOverlay.height = height;
+                //             doomOverlay.width *= ratio;
+                //             doomOverlay.x = app.screen.width * (1.5 / 3);
+                //             doomOverlay.y = app.screen.height - (height / 2);
+                //         }
+                //         doomOverlay.loop = false;
+                //         doomOverlay.onComplete = (() => {
+                //             setTimeout(() => {
+                //                 document.body.style.cursor = defaultCursor;
+                //                 doomOverlay.alpha = 0;
+                //                 app.stage.removeChild(doomOverlay);
+                //             }, 400);
+                //         });
+                //         doomOverlay.currentFrame = 11;
+                //         doomOverlay.stop();
+                //         app.stage.addChild(doomOverlay);
+                //     });
+                //     this.sprite.on("mouseout", () => {
+                //         clearTimeout(this.timeoutId);
+                //         this.timeoutId = setTimeout(() => {
+                //             document.body.style.cursor = defaultCursor;
+                //             doomOverlay.alpha = 0;
+                //             app.stage.removeChild(doomOverlay);
+                //         }, 0);
+                //     });
 
-                    // this.sprite.on(this.event, () => this.fn(this, doomOverlay));
-                    // this.sprite.on("touchend", () => this.fn(this, doomOverlay));
-                } else {
+                //     // this.sprite.on(this.event, () => this.fn(this, doomOverlay));
+                //     // this.sprite.on("touchend", () => this.fn(this, doomOverlay));
+                // }
+                else {
                     this.sprite.on(this.event, () => this.fn(this));
                     this.sprite.on("touchend", () => this.fn(this));
                 }
