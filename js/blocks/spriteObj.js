@@ -79,14 +79,13 @@ export class spriteObj {
                     
                     this.sprite.on(this.event, () => this.fn(this, this.shadow));
                     this.sprite.on("touchend", () => this.fn(this, this.shadow));
-                }
-                // else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp" ||
-                //     this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
+                } else if (this.path == "assets/canvas/vehicles/motorbike/motorbike.webp" ||
+                    this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
                 //     // Motorcycle & Police Car else 
                 //     const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
                 //     doomOverlay.animationSpeed *= 1.1;
-                //     this.sprite.on("mouseover", () => {
-                //         document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
+                    this.sprite.on("mouseover", () => {
+                        document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
                 //         if (IS_SMALL_SCREEN) {
                 //             doomOverlay.alpha = 0;
                 //         } else {
@@ -118,20 +117,19 @@ export class spriteObj {
                 //         doomOverlay.currentFrame = 11;
                 //         doomOverlay.stop();
                 //         app.stage.addChild(doomOverlay);
-                //     });
-                //     this.sprite.on("mouseout", () => {
-                //         clearTimeout(this.timeoutId);
-                //         this.timeoutId = setTimeout(() => {
-                //             document.body.style.cursor = defaultCursor;
-                //             doomOverlay.alpha = 0;
-                //             app.stage.removeChild(doomOverlay);
-                //         }, 0);
-                //     });
+                    });
+                    this.sprite.on("mouseout", () => {
+                        clearTimeout(this.timeoutId);
+                        this.timeoutId = setTimeout(() => {
+                            document.body.style.cursor = defaultCursor;
+                            // doomOverlay.alpha = 0;
+                            // app.stage.removeChild(doomOverlay);
+                        }, 0);
+                    });
 
-                //     // this.sprite.on(this.event, () => this.fn(this, doomOverlay));
-                //     // this.sprite.on("touchend", () => this.fn(this, doomOverlay));
-                // }
-                else {
+                    this.sprite.on(this.event, () => this.fn(this/*, doomOverlay*/));
+                    this.sprite.on("touchend", () => this.fn(this/*, doomOverlay*/));
+                } else {
                     this.sprite.on(this.event, () => this.fn(this));
                     this.sprite.on("touchend", () => this.fn(this));
                 }
