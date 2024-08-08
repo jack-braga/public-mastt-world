@@ -83,6 +83,8 @@ export class spriteObj {
                     this.path == "assets/canvas/vehicles/policeCar/policeCar.webp") {
                     // Motorcycle & Police Car else 
                     const doomOverlay = await PIXI.Assets.load('assets/gifs/doomOverlay.gif');
+                    // removes doom overlay:
+                    app.stage.removeChild(doomOverlay);
                     doomOverlay.animationSpeed *= 1.1;
                     this.sprite.on("mouseover", () => {
                         document.body.style.cursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
@@ -91,7 +93,6 @@ export class spriteObj {
                         } else {
                             doomOverlay.alpha = 1;
                         }
-                        // doomOverlay.alpha = 1;
                         doomOverlay.zIndex = 2;
                         let height;
                         let width;
@@ -128,8 +129,8 @@ export class spriteObj {
                         }, 0);
                     });
 
-                    this.sprite.on(this.event, () => this.fn(this, doomOverlay));
-                    this.sprite.on("touchend", () => this.fn(this, doomOverlay));
+                    // this.sprite.on(this.event, () => this.fn(this, doomOverlay));
+                    // this.sprite.on("touchend", () => this.fn(this, doomOverlay));
                 } else {
                     this.sprite.on(this.event, () => this.fn(this));
                     this.sprite.on("touchend", () => this.fn(this));

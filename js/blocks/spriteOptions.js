@@ -82,7 +82,6 @@ const motorbikeInteraction = {
             app.stage.addChild(doomOverlay);
             doomOverlay.alpha = 1;
         }
-        // doomOverlay.alpha = 1;
         doomOverlay.play();
     }
 };
