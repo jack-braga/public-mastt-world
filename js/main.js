@@ -4,13 +4,13 @@ import { app, IS_SMALL_SCREEN } from "./blocks/app.js";
 import { spriteObj } from "./blocks/spriteObj.js";
 import { turningSpriteObj } from "./blocks/turningSpriteObj.js";
 import { spriteArray } from "./blocks/infoSlide.js";
-import { mapPosition,
+import { mapPosition, turningSpriteInteraction,
     warehousePosition, warehouseOpts,
     motorbikePosition, motorbikeOpts,
     policeCarPosition, policeCarOpts,
     utePosition, uteMovement,
     jumboPosition, jumboOpts, jumboShadowPosition, jumboShadowOpts,
-    airplanePosition, airplaneOpts, airplaneShadowPosition,
+    airplanePosition, airplaneOpts, airplaneShadowPosition, airplaneShadowOpts,
     getJSON,initInfoSlide,
     cementTruckPosition, cementTruckMovement,
     sportsCarPosition, sportsCarMovement,
@@ -65,7 +65,7 @@ const motorbike = new spriteObj("assets/canvas/vehicles/motorbike/motorbike.webp
 await motorbike.init();
 
 // Init Sports Car
-const sportsCar = new turningSpriteObj("assets/canvas/vehicles/sportsCar/sportsCar-", sportsCarPosition, sportsCarMovement);
+const sportsCar = new turningSpriteObj("assets/canvas/vehicles/sportsCar/sportsCar-", sportsCarPosition, sportsCarMovement, turningSpriteInteraction);
 await sportsCar.initBack();
 await sportsCar.initFront();
 
@@ -74,26 +74,27 @@ const policeCar = new spriteObj("assets/canvas/vehicles/policeCar/policeCar.webp
 await policeCar.init();
 
 // Init UTE
-const ute = new turningSpriteObj("assets/canvas/vehicles/ute/ute-", utePosition, uteMovement);
+const ute = new turningSpriteObj("assets/canvas/vehicles/ute/ute-", utePosition, uteMovement, turningSpriteInteraction);
 await ute.initBack();
 await ute.initFront();
 ute.upRight.sprite.scale.x *= -1;
 ute.upLeft.sprite.scale.x *= -1;
 
 // Init Cement Truck
-const cementTruck = new turningSpriteObj("assets/canvas/vehicles/cementTruck/cementTruck-", cementTruckPosition, cementTruckMovement);
+const cementTruck = new turningSpriteObj("assets/canvas/vehicles/cementTruck/cementTruck-", cementTruckPosition, cementTruckMovement, turningSpriteInteraction);
 await cementTruck.initBack();
 await cementTruck.initFront();
 
 // Init Fighter Shadow
-const fighterShadow = new turningSpriteObj("assets/canvas/vehicles/fighter/fighter-shadow-", fighterShadowPosition, fighterMovement, 0.4);
+const fighterShadow = new turningSpriteObj("assets/canvas/vehicles/fighter/fighter-shadow-", fighterShadowPosition, fighterMovement, null, 0.4);
 await fighterShadow.initBack();
 await fighterShadow.initFront();
 
 // Init Fighter
-const fighter = new turningSpriteObj("assets/canvas/vehicles/fighter/fighter-", fighterPosition, fighterMovement);
+const fighter = new turningSpriteObj("assets/canvas/vehicles/fighter/fighter-", fighterPosition, fighterMovement, turningSpriteInteraction);
 await fighter.initBack();
 await fighter.initFront();
+fighter.shadow = fighterShadow;
 
 // Init Jumbo Shadow
 const jumboShadow = new spriteObj("assets/canvas/vehicles/jumbo/jumbo-shadow.webp", jumboShadowPosition, jumboShadowOpts);
@@ -106,7 +107,7 @@ jumbo.shadow = jumboShadow;
 await jumbo.init();
 
 // Init Airplane Shadow
-const airplaneShadow = new spriteObj("assets/canvas/vehicles/airplane/airplane-shadow.webp", airplaneShadowPosition, airplaneOpts);
+const airplaneShadow = new spriteObj("assets/canvas/vehicles/airplane/airplane-shadow.webp", airplaneShadowPosition, airplaneShadowOpts);
 await airplaneShadow.init();
 airplaneShadow.sprite.alpha = 0.2;
 

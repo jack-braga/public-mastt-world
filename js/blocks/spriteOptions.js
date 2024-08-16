@@ -21,7 +21,7 @@ export function initInfoSlide() {
 }
 
 // Const/Glocal variables
-const targetCursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
+// const targetCursor = `url('assets/canvas/cursors/target.webp') 16 16, auto`;
 const wandCursor = `url('assets/canvas/cursors/wand.webp') 16 16, auto`;
 
 // ========== Map ===========
@@ -57,7 +57,7 @@ export const motorbikePosition = {
     xOffset: -37.5,
     yOffset: -22,
 };
-const explode = await PIXI.Assets.load('assets/gifs/explode.gif');
+const explode = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
 // const boom = new Audio('assets/boom.mp3');
 const motorbikeInteraction = {
     event: "mousedown",
@@ -66,13 +66,14 @@ const motorbikeInteraction = {
         app.stage.removeChild(motorbike.sprite);
         explode.alpha = 1;
         explode.anchor.set(0.5);
-        explode.width = 4 * motorbike.sprite.width;
-        explode.height = 4 * motorbike.sprite.width;
+        explode.width = 6 * motorbike.sprite.width;
+        explode.height = 6 * motorbike.sprite.width;
         explode.x = motorbike.sprite.x;
         explode.y = motorbike.sprite.y;
         explode.loop = false;
         explode.onComplete = (() => explode.alpha = 0);
         explode.currentFrame = 0;
+        // explode.animationSpeed *= 0.75;
         app.stage.addChild(explode);
         explode.play();
 
@@ -89,7 +90,7 @@ const motorbikeInteraction = {
         // // doomOverlay.alpha = 1;
         // doomOverlay.play();
     },
-    hoverCursor: targetCursor,
+    hoverCursor: wandCursor,
 };
 const motorbikeMovement = {
     speed: 1/25,
@@ -157,7 +158,7 @@ export const jumboPosition = {
     xOffset: 10,
     yOffset: 4,
 };
-const magicPoof = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
+export const magicPoof = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
 const jumboInteraction = {
     event: "mousedown",
     fn: (jumbo, shadow) => {
@@ -172,7 +173,7 @@ const jumboInteraction = {
         magicPoof.y = jumbo.sprite.y;
         magicPoof.loop = false;
         magicPoof.onComplete = (() => magicPoof.alpha = 0);
-        magicPoof.animationSpeed *= 0.75;
+        // magicPoof.animationSpeed *= 0.75;
         magicPoof.currentFrame = 0;
         app.stage.addChild(magicPoof);
         magicPoof.play();
@@ -221,7 +222,7 @@ const airplaneInteraction = {
         magicPoof.y = airplane.sprite.y;
         magicPoof.loop = false;
         magicPoof.onComplete = (() => magicPoof.alpha = 0);
-        magicPoof.animationSpeed *= 0.75;
+        // magicPoof.animationSpeed *= 0.75;
         magicPoof.currentFrame = 0;
         app.stage.addChild(magicPoof);
         magicPoof.play();
@@ -237,6 +238,11 @@ const airplaneMovement = {
 export const airplaneOpts = {
     hasTagBool: false,
     interaction: airplaneInteraction,
+    movement: airplaneMovement,
+};
+export const airplaneShadowOpts = {
+    hasTagBool: false,
+    interaction: null,
     movement: airplaneMovement,
 };
 export const airplaneShadowPosition = {
@@ -403,13 +409,14 @@ const policeCarInteraction = {
         app.stage.removeChild(policeCar.sprite);
         explode.alpha = 1;
         explode.anchor.set(0.5);
-        explode.width = 2 * policeCar.sprite.width;
-        explode.height = 2 * policeCar.sprite.width;
+        explode.width = 3 * policeCar.sprite.width;
+        explode.height = 3 * policeCar.sprite.width;
         explode.x = policeCar.sprite.x;
         explode.y = policeCar.sprite.y;
         explode.loop = false;
         explode.onComplete = (() => explode.alpha = 0);
         explode.currentFrame = 0;
+        // explode.animationSpeed *= 0.75;
         app.stage.addChild(explode);
         explode.play();
 
@@ -440,7 +447,7 @@ const policeCarInteraction = {
         // // doomOverlay.alpha = 1;
         // doomOverlay.play();
     },
-    hoverCursor: targetCursor,
+    hoverCursor: wandCursor,
 };
 const policeCarMovement = {
     speed: 2/35,
@@ -494,4 +501,29 @@ export const utePosition = {
     ul: uteULPosition,
     dl: uteDLPosition,
     dr: uteDRPosition,
+};
+
+// ========== turningSprites ==========
+export const turningSpriteInteraction = {
+    event: "mousedown",
+    fn: (turningSprite, currSprite) => {
+        if (turningSprite.shadow != undefined) {
+            turningSprite.shadow.removeChildren();
+        }
+        turningSprite.removeChildren();
+        document.body.style.cursor = defaultCursor;
+        magicPoof.alpha = 1;
+        magicPoof.anchor.set(0.5);
+        magicPoof.width = 4 * currSprite.sprite.width;
+        magicPoof.height = 4 * currSprite.sprite.width;
+        magicPoof.x = currSprite.sprite.x;
+        magicPoof.y = currSprite.sprite.y;
+        magicPoof.loop = false;
+        magicPoof.onComplete = (() => magicPoof.alpha = 0);
+        magicPoof.currentFrame = 0;
+        app.stage.addChild(magicPoof);
+        magicPoof.play();
+    },
+    hoverCursor: `url('assets/canvas/cursors/wand.webp') 16 16, auto`,
+    isTurningSpriteChild: null,
 };

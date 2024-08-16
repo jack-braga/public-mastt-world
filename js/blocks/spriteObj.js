@@ -14,6 +14,7 @@ export class spriteObj {
         this.event = opts.interaction?.event;
         this.fn = opts.interaction?.fn;
         this.hoverCursor = opts.interaction?.hoverCursor;
+        this.isTurningSpriteChild = opts.interaction?.isTurningSpriteChild;
         this.interactive = opts.interaction;
 
         // Movement
@@ -130,6 +131,9 @@ export class spriteObj {
 
                     this.sprite.on(this.event, () => this.fn(this/*, doomOverlay*/));
                     this.sprite.on("touchend", () => this.fn(this/*, doomOverlay*/));
+                } else if (this.isTurningSpriteChild != undefined) {
+                    this.sprite.on(this.event, () => this.fn(this.isTurningSpriteChild, this));
+                    this.sprite.on("touchend", () => this.fn(this.isTurningSpriteChild, this));
                 } else {
                     this.sprite.on(this.event, () => this.fn(this));
                     this.sprite.on("touchend", () => this.fn(this));

@@ -10,13 +10,16 @@ export class turningSpriteObj {
     downRight = null;
     defaultAlpha = 1;
     opts = null;
-    constructor(path, position, movement, defaultAlpha = 1) {
+    constructor(path, position, movement, turningSpriteInteraction = null, defaultAlpha = 1) {
         this.opts = {
             tagBool: false,
-            interaction: null,
+            interaction: turningSpriteInteraction,
             movement: movement,
         };
         this.defaultAlpha = defaultAlpha;
+        if (turningSpriteInteraction != null) {
+            this.opts.interaction.isTurningSpriteChild = this;
+        }
 
         // BELOW MUST BE SEQUENTIAL - DO NOT CHANGE ORDER
         this.setSpeedMultipliers(position.ur);
@@ -104,5 +107,6 @@ export class turningSpriteObj {
         app.stage.removeChild(this.upRight.sprite);
         app.stage.removeChild(this.upLeft.sprite);
         app.stage.removeChild(this.downLeft.sprite);
-        app.stage.removeChild(this.downRight.sprite);    };
+        app.stage.removeChild(this.downRight.sprite);
+    };
 };
