@@ -47,6 +47,7 @@ export class turningSpriteObj {
 
         this.upRight.sprite.alpha = this.defaultAlpha;
         this.downRight.sprite.alpha = 0;
+        this.downRight.sprite.interactive = false;
     };
     async initBack() {
         await this.upLeft.init();
@@ -57,6 +58,9 @@ export class turningSpriteObj {
 
         this.upLeft.sprite.alpha = 0;
         this.downLeft.sprite.alpha = 0;
+
+        this.upLeft.sprite.interactive = false;
+        this.downLeft.sprite.interactive = false;
     };
     update(ratio) {
         this.upRight.update(ratio);

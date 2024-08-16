@@ -1,6 +1,6 @@
 // arguments for each sprite to be passed into the spriteObj constructor
 import { infoSlideInterface } from "./infoSlide.js";
-import { app, defaultCursor, IS_SMALL_SCREEN } from "./app.js";
+import { app, defaultCursor, IS_SMALL_SCREEN, defaulfGif, defaulfGifScale } from "./app.js";
 
 // READ IN JSON
 let infoSlideData;
@@ -57,25 +57,24 @@ export const motorbikePosition = {
     xOffset: -37.5,
     yOffset: -22,
 };
-const explode = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
 // const boom = new Audio('assets/boom.mp3');
 const motorbikeInteraction = {
     event: "mousedown",
     fn: (motorbike/*, doomOverlay*/) => {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(motorbike.sprite);
-        explode.alpha = 1;
-        explode.anchor.set(0.5);
-        explode.width = 6 * motorbike.sprite.width;
-        explode.height = 6 * motorbike.sprite.width;
-        explode.x = motorbike.sprite.x;
-        explode.y = motorbike.sprite.y;
-        explode.loop = false;
-        explode.onComplete = (() => explode.alpha = 0);
-        explode.currentFrame = 0;
-        // explode.animationSpeed *= 0.75;
-        app.stage.addChild(explode);
-        explode.play();
+        defaulfGif.alpha = 1;
+        defaulfGif.anchor.set(0.5);
+        defaulfGif.width = 6 * motorbike.sprite.width * defaulfGifScale;
+        defaulfGif.height = 6 * motorbike.sprite.width * defaulfGifScale;
+        defaulfGif.x = motorbike.sprite.x;
+        defaulfGif.y = motorbike.sprite.y;
+        defaulfGif.loop = false;
+        defaulfGif.onComplete = (() => defaulfGif.alpha = 0);
+        defaulfGif.currentFrame = 0;
+        // defaulfGif.animationSpeed *= 0.75;
+        app.stage.addChild(defaulfGif);
+        defaulfGif.play();
 
         // boom.play();
         // document.body.style.cursor = `auto`;
@@ -158,25 +157,24 @@ export const jumboPosition = {
     xOffset: 10,
     yOffset: 4,
 };
-export const magicPoof = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
 const jumboInteraction = {
     event: "mousedown",
     fn: (jumbo, shadow) => {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(jumbo.sprite);
         app.stage.removeChild(shadow.sprite);
-        magicPoof.alpha = 1;
-        magicPoof.anchor.set(0.5);
-        magicPoof.width = 1.7 * jumbo.sprite.width;
-        magicPoof.height = 1.7 * jumbo.sprite.width;
-        magicPoof.x = jumbo.sprite.x;
-        magicPoof.y = jumbo.sprite.y;
-        magicPoof.loop = false;
-        magicPoof.onComplete = (() => magicPoof.alpha = 0);
-        // magicPoof.animationSpeed *= 0.75;
-        magicPoof.currentFrame = 0;
-        app.stage.addChild(magicPoof);
-        magicPoof.play();
+        defaulfGif.alpha = 1;
+        defaulfGif.anchor.set(0.5);
+        defaulfGif.width = 1.7 * jumbo.sprite.width * defaulfGifScale;
+        defaulfGif.height = 1.7 * jumbo.sprite.width * defaulfGifScale;
+        defaulfGif.x = jumbo.sprite.x;
+        defaulfGif.y = jumbo.sprite.y;
+        defaulfGif.loop = false;
+        defaulfGif.onComplete = (() => defaulfGif.alpha = 0);
+        // defaulfGif.animationSpeed *= 0.75;
+        defaulfGif.currentFrame = 0;
+        app.stage.addChild(defaulfGif);
+        defaulfGif.play();
     },
     hoverCursor: wandCursor,
 };
@@ -214,18 +212,18 @@ const airplaneInteraction = {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(airplane.sprite);
         app.stage.removeChild(shadow.sprite);
-        magicPoof.alpha = 1;
-        magicPoof.anchor.set(0.5);
-        magicPoof.width = 1.7 * airplane.sprite.width;
-        magicPoof.height = 1.7 * airplane.sprite.width;
-        magicPoof.x = airplane.sprite.x;
-        magicPoof.y = airplane.sprite.y;
-        magicPoof.loop = false;
-        magicPoof.onComplete = (() => magicPoof.alpha = 0);
-        // magicPoof.animationSpeed *= 0.75;
-        magicPoof.currentFrame = 0;
-        app.stage.addChild(magicPoof);
-        magicPoof.play();
+        defaulfGif.alpha = 1;
+        defaulfGif.anchor.set(0.5);
+        defaulfGif.width = 1.7 * airplane.sprite.width * defaulfGifScale;
+        defaulfGif.height = 1.7 * airplane.sprite.width * defaulfGifScale;
+        defaulfGif.x = airplane.sprite.x;
+        defaulfGif.y = airplane.sprite.y;
+        defaulfGif.loop = false;
+        defaulfGif.onComplete = (() => defaulfGif.alpha = 0);
+        // defaulfGif.animationSpeed *= 0.75;
+        defaulfGif.currentFrame = 0;
+        app.stage.addChild(defaulfGif);
+        defaulfGif.play();
     },
     hoverCursor: wandCursor,
 };
@@ -407,18 +405,18 @@ const policeCarInteraction = {
     fn: (policeCar/*, doomOverlay*/) => {
         document.body.style.cursor = defaultCursor;
         app.stage.removeChild(policeCar.sprite);
-        explode.alpha = 1;
-        explode.anchor.set(0.5);
-        explode.width = 3 * policeCar.sprite.width;
-        explode.height = 3 * policeCar.sprite.width;
-        explode.x = policeCar.sprite.x;
-        explode.y = policeCar.sprite.y;
-        explode.loop = false;
-        explode.onComplete = (() => explode.alpha = 0);
-        explode.currentFrame = 0;
-        // explode.animationSpeed *= 0.75;
-        app.stage.addChild(explode);
-        explode.play();
+        defaulfGif.alpha = 1;
+        defaulfGif.anchor.set(0.5);
+        defaulfGif.width = 3 * policeCar.sprite.width * defaulfGifScale;
+        defaulfGif.height = 3 * policeCar.sprite.width * defaulfGifScale;
+        defaulfGif.x = policeCar.sprite.x;
+        defaulfGif.y = policeCar.sprite.y;
+        defaulfGif.loop = false;
+        defaulfGif.onComplete = (() => defaulfGif.alpha = 0);
+        defaulfGif.currentFrame = 0;
+        // defaulfGif.animationSpeed *= 0.75;
+        app.stage.addChild(defaulfGif);
+        defaulfGif.play();
 
         // if (IS_SMALL_SCREEN) {
         //     doomOverlay.alpha = 0;
@@ -509,23 +507,23 @@ export const turningSpriteInteraction = {
     fn: (turningSprite, currSprite) => {
         turningSprite.removeChildren();
         document.body.style.cursor = defaultCursor;
-        magicPoof.alpha = 1;
-        magicPoof.anchor.set(0.5);
-        magicPoof.width = 4 * currSprite.sprite.width;
-        magicPoof.height = 4 * currSprite.sprite.width;
+        defaulfGif.alpha = 1;
+        defaulfGif.anchor.set(0.5);
+        defaulfGif.width = 4 * currSprite.sprite.width * defaulfGifScale;
+        defaulfGif.height = 4 * currSprite.sprite.width * defaulfGifScale;
         // Only applies to Jet Fighter
         if (turningSprite.shadow != undefined) {
             turningSprite.shadow.removeChildren();
-            magicPoof.width = 2 * currSprite.sprite.width;
-            magicPoof.height = 2 * currSprite.sprite.width;
+            defaulfGif.width = 2 * currSprite.sprite.width * defaulfGifScale;
+            defaulfGif.height = 2 * currSprite.sprite.width * defaulfGifScale;
         }
-        magicPoof.x = currSprite.sprite.x;
-        magicPoof.y = currSprite.sprite.y;
-        magicPoof.loop = false;
-        magicPoof.onComplete = (() => magicPoof.alpha = 0);
-        magicPoof.currentFrame = 0;
-        app.stage.addChild(magicPoof);
-        magicPoof.play();
+        defaulfGif.x = currSprite.sprite.x;
+        defaulfGif.y = currSprite.sprite.y;
+        defaulfGif.loop = false;
+        defaulfGif.onComplete = (() => defaulfGif.alpha = 0);
+        defaulfGif.currentFrame = 0;
+        app.stage.addChild(defaulfGif);
+        defaulfGif.play();
     },
     hoverCursor: `url('assets/canvas/cursors/wand.webp') 16 16, auto`,
     isTurningSpriteChild: null,

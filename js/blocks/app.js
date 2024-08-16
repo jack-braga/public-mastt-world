@@ -40,11 +40,23 @@ document.querySelector("#wrapper").appendChild(container);
 // Theme Toggle
 const toggle = document.querySelector('.toggle');
 const icon = document.getElementById('toggle-icon');
+const magicPoof = await PIXI.Assets.load('assets/gifs/magicPoof.gif');
+const explode = await PIXI.Assets.load('assets/gifs/explode.gif');
+explode.scale.set(0.1);
+export let defaulfGif = magicPoof;
+export let defaulfGifScale = 1;
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     icon.textContent = `${theme}_mode`;
+    if (theme == 'dark') {
+        defaulfGif = explode;
+        defaulfGifScale = 0.55;
+    } else {
+        defaulfGif = magicPoof;
+        defaulfGifScale = 1;
+    }
 }
 
 toggle.addEventListener("click", e => {
