@@ -8,10 +8,10 @@ const MIN_ALPHA = 0.8;
 
 export class tag {
     constructor(xOffset, yOffset, tagSuffix) {
-        const xAmplify = 3.125 / 2;
-        const yAmplify = 3.9 / 2;
+        const xAmplify = 2.45 / 3;
+        const yAmplify = 3.95 / 3;
         const tagPosistion = {
-            scaling: 0.64, // 3/2
+            scaling: 0.64, // 0.64
             xOffset: xOffset * xAmplify,
             yOffset: yOffset * yAmplify,
         };

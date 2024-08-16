@@ -33,8 +33,8 @@ export const mapPosition = {
 
 // ========== Warehouse ==========
 export const warehousePosition = {
-    scaling: 2.5,
-    xOffset: 1.8,
+    scaling: 1.5,
+    xOffset: 3.2,
     yOffset: -0.4,
 };
 const warehouseInteraction = {
@@ -114,8 +114,8 @@ export const carMovement = {
 
 // ========== PM Building ==========
 export const pmBuildingPosition = {
-    scaling: 2.5,
-    xOffset: -1.6,
+    scaling: 1.5,
+    xOffset: -3.32,
     yOffset: -0.54,
 };
 const pmBuildingInteraction = {
@@ -134,9 +134,9 @@ export const pmBuildingOpts = {
 
 // ========== Construction Site ==========
 export const constructionSitePosition = {
-    scaling: 2.5,
-    xOffset: 0.15,
-    yOffset: 0.9,
+    scaling: 1.5,
+    xOffset: 0.16,
+    yOffset: 1.11,
 };
 const constructionSiteInteraction = {
     event: "mousedown",
@@ -507,15 +507,18 @@ export const utePosition = {
 export const turningSpriteInteraction = {
     event: "mousedown",
     fn: (turningSprite, currSprite) => {
-        if (turningSprite.shadow != undefined) {
-            turningSprite.shadow.removeChildren();
-        }
         turningSprite.removeChildren();
         document.body.style.cursor = defaultCursor;
         magicPoof.alpha = 1;
         magicPoof.anchor.set(0.5);
         magicPoof.width = 4 * currSprite.sprite.width;
         magicPoof.height = 4 * currSprite.sprite.width;
+        // Only applies to Jet Fighter
+        if (turningSprite.shadow != undefined) {
+            turningSprite.shadow.removeChildren();
+            magicPoof.width = 2 * currSprite.sprite.width;
+            magicPoof.height = 2 * currSprite.sprite.width;
+        }
         magicPoof.x = currSprite.sprite.x;
         magicPoof.y = currSprite.sprite.y;
         magicPoof.loop = false;

@@ -98,7 +98,9 @@ export class turningSpriteObj {
         if (approachAngel.m == this.end && this.currentAngle == approachAngel) {
             let s = this.currentAngle;
             approachAngel.sprite.alpha = 0;
+            approachAngel.sprite.interactive = false;
             departureAngel.sprite.alpha = this.defaultAlpha;
+            departureAngel.sprite.interactive = true;
             departureAngel.m = 0;
             this.currentAngle = departureAngel;
         }

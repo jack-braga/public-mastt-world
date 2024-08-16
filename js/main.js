@@ -41,8 +41,9 @@ await map.init();
 // Init Warehouse
 const warehouse = new spriteObj("assets/canvas/hit-box.webp", warehousePosition, warehouseOpts);
 await warehouse.init();
-warehouse.sprite.rotation = Math.PI / 7;
+// warehouse.sprite.rotation = Math.PI / 7;
 warehouse.sprite.scale.x *= 1.3;
+warehouse.tag.spriteObj.xOffset += 0.35;
 warehouse.tag.spriteObj.yOffset -= 0.3;
 
 // Init PM Building
@@ -50,15 +51,15 @@ const pmBuilding = new spriteObj("assets/canvas/hit-box.webp", pmBuildingPositio
 await pmBuilding.init();
 // pmBuilding.sprite.rotation = Math.PI - (Math.PI / 3);
 pmBuilding.sprite.rotation = Math.PI / 2;
-pmBuilding.sprite.scale.x *= 1.5;
-pmBuilding.tag.spriteObj.xOffset -= 0.335;
+pmBuilding.sprite.scale.x *= 1.2;
+pmBuilding.tag.spriteObj.xOffset -= 0.13;
 
 // Init Construction Site
 const constructionSite = new spriteObj("assets/canvas/hit-box.webp", constructionSitePosition, constructionSiteOpts);
 await constructionSite.init();
-constructionSite.sprite.rotation = Math.PI / 7;
+// constructionSite.sprite.rotation = Math.PI / 7;
 constructionSite.sprite.scale.x *= 1.3;
-constructionSite.tag.spriteObj.yOffset += 0.3;
+constructionSite.tag.spriteObj.yOffset += 0.1;
 
 // Init Motorbike
 const motorbike = new spriteObj("assets/canvas/vehicles/motorbike/motorbike.webp", motorbikePosition, motorbikeOpts);
